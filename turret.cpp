@@ -110,7 +110,7 @@ void Turret::Draw(SDL_Renderer *renderer)
 	SDL_RenderCopy(renderer, tBase, NULL, &baseRect);
 
 	// Draw the barrel texture using the vars texture and posRect
-	SDL_RenderCopyEx( renderer, tBarrel,nullptr, &barrelRect, turretangle, &center, SDL_FLIP_NONE );
+	SDL_RenderCopyEx( renderer, tBarrel, NULL, &barrelRect, turretangle, &center, SDL_FLIP_NONE );
 }
 
 // create a bullet

@@ -151,7 +151,7 @@ void Tank::Draw(SDL_Renderer *renderer)
 	}
 
 	// Draw the player texture using the vars texture and posRect
-	SDL_RenderCopyEx( renderer, texture,nullptr, &posRect, tankangle, &center, SDL_FLIP_NONE );
+	SDL_RenderCopyEx( renderer, texture, NULL, &posRect, tankangle, &center, SDL_FLIP_NONE );
 }
 
 

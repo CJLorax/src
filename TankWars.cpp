@@ -50,7 +50,7 @@ int lastTime = 0;
 	#include "SDL2/SDL.h"
 	#include "SDL2/SDL_image.h"
 	#include "SDL2/SDL_mixer.h"
-	#include "SDL2/SDL_TTF.h"
+	#include "SDL2/SDL_ttf.h"
 
 	#include <unistd.h>
 
@@ -68,10 +68,10 @@ int main() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 
 	// Create a SDL Window reference - pointer
-	SDL_Window *window = nullptr;
+	SDL_Window *window = NULL;
 
 	// Create a SDL RenderTarget - pointer
-	SDL_Renderer *renderer = nullptr;
+	SDL_Renderer *renderer = NULL;
 
 	// Create a SDL Window in the middle of the screen
 	window = SDL_CreateWindow("Tank Wars!",
