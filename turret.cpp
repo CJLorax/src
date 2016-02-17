@@ -55,30 +55,26 @@ Turret::Turret(SDL_Renderer *renderer, string filePath, string audioPath, float 
 		// add to bulletlist
 		bulletList.push_back(tmpBullet);
 	}
+
+	// random null init
+	srand(time(NULL));
 }
 
 
 // Tank Update method
 void Turret::Update(float deltaTime, SDL_Rect tankRect)
 {
-	int attack;
-	srand(time(NULL));
-	attack = rand() % 5 + 1;
-
-	if(SDL_GetTicks() > fireTime){
-
-		if(attack == 3){
-			CreateBullet(tankRect);
-			attack = 0;
-		}
-
-		fireTime = SDL_GetTicks() + fireRate;
-	}
-
 	//get the angle between the tank and the turret
 	x = (tankRect.x + (tankRect.w/2)) - (baseRect.x + (baseRect.w/2));
 	y = (tankRect.y + (tankRect.h/2)) - (baseRect.y + (baseRect.h/2));
 	turretangle = atan2(y,x) * 180 / 3.14;
+
+	if(SDL_GetTicks() > fireTime){
+
+		CreateBullet(tankRect);
+
+		fireTime = SDL_GetTicks() + (rand() % 3 + 1) * 1000;
+	}
 
 	// Update the turret's bullets
 	for (int i = 0; i < bulletList.size(); i++)
